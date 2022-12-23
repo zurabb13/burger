@@ -7,6 +7,7 @@ import { RatingModule } from 'ng-starrating'
 import { SearchComponent } from '../core/components/partials/search/search.component'
 import { TagsComponent } from '../core/components/partials/tags/tags.component'
 import { RouterModule } from '@angular/router'
+import { FoodPageComponent } from '../core/components/pages/food-page/food-page.component'
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router'
         HomeComponent,
         SearchComponent,
         TagsComponent,
+        FoodPageComponent,
     ],
     imports: [CommonModule, MaterialModule, RatingModule, RouterModule],
     exports: [HeaderComponent, HomeComponent, SearchComponent],

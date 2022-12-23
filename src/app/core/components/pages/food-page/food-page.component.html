@@ -1,0 +1,49 @@
+<div *ngIf="foods" class="container">
+  <img [src]="foods.imageUrl" [alt]="foods.name"/>
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{foods.name}}
+      </span>
+      <span class="favorite {{foods.favorite? '': 'not'}}">❤</span>
+    </div>
+    <div class="rating">
+      <star-rating
+        [value]="foods.stars"
+        [totalstars]="5"
+        checkedcolor="red"
+        uncheckedcolor="black"
+        size="25px"
+        [readonly]="true">
+      </star-rating>
+    </div>
+
+    <div class="origins">
+      <span *ngFor="let origin of foods.origins">
+        {{origin}}
+      </span>
+    </div>
+
+    <div class="tags">
+      <a *ngFor="let tag of foods.tags" routerLink="/tag/{{tag}}">
+        {{tag}}
+      </a>
+    </div>
+
+    <div class="cook-time">
+      <span>
+        Time to cook about <strong>{{foods.cookTime}}</strong> minutes
+      </span>
+    </div>
+
+    <div class="price">
+      <span>
+        {{foods.price | currency}}
+      </span>
+    </div>
+
+    <button mat-raised-button color="warn">Add To Cart</button>
+
+  </div>
+</div>
