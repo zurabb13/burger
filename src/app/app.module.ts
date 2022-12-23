@@ -7,10 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { SharedModule } from './shared/shared.module'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { RatingModule } from 'ng-starrating'
+import { RatingModule } from 'ng-starrating';
+import { CartPageComponent } from './core/components/pages/cart-page/cart-page.component'
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, CartPageComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
