@@ -1,0 +1,41 @@
+.example-spacer{
+  flex: 1 1 auto;
+}
+.home {
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    li{
+    cursor: pointer;
+
+    }
+
+
+    a {
+      padding: 0.2rem;
+      display: inline-block;
+    }
+  }
+  .manu-container{
+      position: relative;
+    &:hover .manu{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      cursor: pointer;
+      color: black;
+    }
+    .manu{
+        position:absolute;
+        z-index:1;
+        background:whitesmoke;
+        display: none;
+      a{
+        width: 100%;
+        min-width:8rem;
+      }
+    }
+  }
+}
