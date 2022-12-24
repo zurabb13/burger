@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router'
 import { FoodPageComponent } from '../core/components/pages/food-page/food-page.component'
 import { CartPageComponent } from '../core/components/pages/cart-page/cart-page.component'
 import { TitleComponent } from '../core/components/partials/title/title.component'
+import { NotFoundComponent } from '../core/components/partials/not-found/not-found.component'
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { TitleComponent } from '../core/components/partials/title/title.componen
         FoodPageComponent,
         CartPageComponent,
         TitleComponent,
+        NotFoundComponent,
     ],
     imports: [CommonModule, MaterialModule, RatingModule, RouterModule],
     exports: [HeaderComponent, HomeComponent, SearchComponent],

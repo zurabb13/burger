@@ -8,8 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { SharedModule } from './shared/shared.module'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { RatingModule } from 'ng-starrating'
-import { CartPageComponent } from './core/components/pages/cart-page/cart-page.component'
-import { TitleComponent } from './core/components/partials/title/title.component'
 
 @NgModule({
     declarations: [AppComponent],
