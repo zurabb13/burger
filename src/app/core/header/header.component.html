@@ -15,7 +15,7 @@
         </div>
       </li>
       <li>
-        <a matBadge="4" matBadgeColor="warn">Cart </a>
+        <a class="cart" routerLink="/cart-page">Cart <span *ngIf="cartQuantity"  [matBadge]="cartQuantity" matBadgeColor="warn" ></span></a>
       </li>
     </ul>
   </div>

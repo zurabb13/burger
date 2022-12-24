@@ -8,6 +8,8 @@ import { SearchComponent } from '../core/components/partials/search/search.compo
 import { TagsComponent } from '../core/components/partials/tags/tags.component'
 import { RouterModule } from '@angular/router'
 import { FoodPageComponent } from '../core/components/pages/food-page/food-page.component'
+import { CartPageComponent } from '../core/components/pages/cart-page/cart-page.component'
+import { TitleComponent } from '../core/components/partials/title/title.component'
 
 @NgModule({
     declarations: [
@@ -16,6 +18,8 @@ import { FoodPageComponent } from '../core/components/pages/food-page/food-page.
         SearchComponent,
         TagsComponent,
         FoodPageComponent,
+        CartPageComponent,
+        TitleComponent,
     ],
     imports: [CommonModule, MaterialModule, RatingModule, RouterModule],
     exports: [HeaderComponent, HomeComponent, SearchComponent],

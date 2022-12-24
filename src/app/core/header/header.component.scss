@@ -18,6 +18,9 @@
     a {
       padding: 0.2rem;
       display: inline-block;
+      &:hover{
+        color: red;
+      }
 
     }
   }
@@ -47,4 +50,11 @@
 }
 .main{
   color: white;
+}
+.cart{
+  color: white;
+  span{
+    margin-left: 15px;
+  };
+
 }
