@@ -9,6 +9,8 @@ import { SharedModule } from './shared/shared.module'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { RatingModule } from 'ng-starrating'
 import { HttpClientModule } from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms'
+import { ToastrModule } from 'ngx-toastr'
 
 @NgModule({
     declarations: [AppComponent],
@@ -20,6 +22,12 @@ import { HttpClientModule } from '@angular/common/http'
         SharedModule,
         NgbModule,
         HttpClientModule,
+        ReactiveFormsModule,
+        ToastrModule.forRoot({
+            timeOut: 3000,
+            positionClass: 'toast-bottom-right',
+            newestOnTop: false,
+        }),
     ],
     exports: [RatingModule],
     providers: [],

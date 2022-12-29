@@ -3,15 +3,15 @@
   <span class="example-spacer"></span>
   <div class="home">
     <ul>
-      <li>
-        <a>Login</a>
+      <li *ngIf="!isAuth">
+        <a routerLink="/login">Login</a>
       </li>
-      <li class="manu-container">
-        <a>User</a>
+      <li *ngIf="isAuth" class="manu-container">
+        <a>{{user.name }}</a>
         <div class="manu">
-          <a>Profile</a>
-          <a>Orders</a>
-          <a>Logout</a>
+          <a routerLink="/profile">Profile</a>
+          <a routerLink="/order">Orders</a>
+          <a (click)="logout()">Logout</a>
         </div>
       </li>
       <li>

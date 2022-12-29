@@ -11,6 +11,8 @@ import { FoodPageComponent } from '../core/components/pages/food-page/food-page.
 import { CartPageComponent } from '../core/components/pages/cart-page/cart-page.component'
 import { TitleComponent } from '../core/components/partials/title/title.component'
 import { NotFoundComponent } from '../core/components/partials/not-found/not-found.component'
+import { LoginPageComponent } from '../core/components/pages/login-page/login-page.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
     declarations: [
@@ -22,8 +24,16 @@ import { NotFoundComponent } from '../core/components/partials/not-found/not-fou
         CartPageComponent,
         TitleComponent,
         NotFoundComponent,
+        LoginPageComponent,
     ],
-    imports: [CommonModule, MaterialModule, RatingModule, RouterModule],
-    exports: [HeaderComponent, HomeComponent, SearchComponent],
+    imports: [
+        CommonModule,
+        MaterialModule,
+        RatingModule,
+        RouterModule,
+        ReactiveFormsModule,
+        FormsModule,
+    ],
+    exports: [HeaderComponent, HomeComponent, SearchComponent, TitleComponent],
 })
 export class SharedModule {}
