@@ -19,7 +19,11 @@ export class FoodPageComponent {
     ) {
         this.activatedRouter.params.subscribe((res) => {
             if (res['id']) {
-                this.foods = this.foodService.getFoodById(res['id'])
+                this.foodService
+                    .getFoodById(res['id'])
+                    .subscribe((serverFood) => {
+                        this.foods = serverFood
+                    })
             }
         })
     }

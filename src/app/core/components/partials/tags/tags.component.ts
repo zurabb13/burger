@@ -10,6 +10,8 @@ import { FoodService } from '../../../../service/food.service'
 export class TagsComponent {
     tags?: Tag[]
     constructor(foodService: FoodService) {
-        this.tags = foodService.getAllTag()
+        foodService.getAllTag().subscribe((tagService) => {
+            this.tags = tagService
+        })
     }
 }

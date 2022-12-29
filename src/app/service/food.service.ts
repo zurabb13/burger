@@ -1,31 +1,33 @@
 import { Injectable } from '@angular/core'
 import { Food } from '../shared/models/food'
-import { simple_food, sample_tags } from '../../../../backend/src/data'
 import { Tag } from '../shared/models/tag'
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs'
+import { environment } from '../../environments/environment'
 
 @Injectable({
     providedIn: 'root',
 })
 export class FoodService {
-    constructor() {}
+    constructor(private http: HttpClient) {}
 
-    getAll(): Food[] {
-        return simple_food
+    getAll(): Observable<any> {
+        return this.http.get<any>(environment.api.food)
     }
     getAllFoodSearch(searchTerm: string) {
-        return this.getAll().filter((i) =>
-            i.name.toLowerCase().includes(searchTerm.toLowerCase())
+        return this.http.get<Food[]>(
+            `${environment.api.food_search}${searchTerm}`
         )
     }
-    getAllTag(): Tag[] {
-        return sample_tags
+    getAllTag(): Observable<Tag[]> {
+        return this.http.get<Tag[]>(environment.api.tag)
     }
-    getAllFoodByTag(tag: string): Food[] {
-        return tag == 'All'
+    getAllFoodByTag(tag: string): Observable<any> {
+        return tag === 'All'
             ? this.getAll()
-            : this.getAll().filter((food) => food.tags?.includes(tag))
+            : this.http.get<any>(`${environment.api.tag_name}${tag}`)
     }
-    getFoodById(id: string): Food {
-        return this.getAll().find((food) => food.id == id) ?? new Food()
+    getFoodById(id: any): Observable<Food> {
+        return this.http.get<Food>(`${environment.api.food_id}${id}`)
     }
 }
