@@ -22,6 +22,7 @@ export class LoginPageComponent implements OnInit {
         this.formBuilder()
         this.url = this.activatedRoute.snapshot.queryParams.url
     }
+
     formBuilder() {
         this.loginForm = this.fb.group({
             email: ['', [Validators.required, Validators.email]],
@@ -43,5 +44,6 @@ export class LoginPageComponent implements OnInit {
             .subscribe(() => {
                 this.router.navigateByUrl(this.url)
             })
+
     }
 }
