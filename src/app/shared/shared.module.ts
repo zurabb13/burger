@@ -13,6 +13,9 @@ import { TitleComponent } from '../core/components/partials/title/title.componen
 import { NotFoundComponent } from '../core/components/partials/not-found/not-found.component'
 import { LoginPageComponent } from '../core/components/pages/login-page/login-page.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { InputContainerComponent } from '../core/components/partials/input-container/input-container.component'
+import { InputValidationComponent } from '../core/components/partials/input-validation/input-validation.component'
+import { TextInputComponent } from '../core/components/partials/text-input/text-input.component'
 
 @NgModule({
     declarations: [
@@ -25,6 +28,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
         TitleComponent,
         NotFoundComponent,
         LoginPageComponent,
+        InputContainerComponent,
+        InputValidationComponent,
+        TextInputComponent,
     ],
     imports: [
         CommonModule,
