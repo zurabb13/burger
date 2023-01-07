@@ -13,18 +13,18 @@ export class HeaderComponent {
     cartQuantity = 0
     user!: User
     f = false
-    constructor(cartService: CartService, private userServuce: UserService) {
+    constructor(cartService: CartService, private userService: UserService) {
         cartService.getCartObs().subscribe((res) => {
             this.cartQuantity = res.totalCount
         })
-        userServuce.userObservable.subscribe((newUser) => {
+        userService.userObservable.subscribe((newUser) => {
             this.user = newUser
         })
     }
     logout() {
-        this.userServuce.logout()
+        this.userService.logout()
     }
     get isAuth() {
-        return this.user.token
+        return this.user.access_token
     }
 }

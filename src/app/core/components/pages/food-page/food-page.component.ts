@@ -18,12 +18,10 @@ export class FoodPageComponent {
         private router: Router
     ) {
         this.activatedRouter.params.subscribe((res) => {
-            if (res['id']) {
-                this.foodService
-                    .getFoodById(res['id'])
-                    .subscribe((serverFood) => {
-                        this.foods = serverFood
-                    })
+            if (res.id) {
+                this.foodService.getFoodById(res.id).subscribe((serverFood) => {
+                    this.foods = serverFood
+                })
             }
         })
     }

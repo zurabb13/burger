@@ -14,8 +14,12 @@
                   label="Password">
 
       </text-input>
-      <div>
+      <div class="button">
         <button mat-raised-button color="warn">submit</button>
+      </div>
+      <div class="register">
+        New User? &nbsp;
+        <a routerLink="/register" [queryParams]="{returnUrl:url}">Create New User</a>
       </div>
     </form>
   </div>

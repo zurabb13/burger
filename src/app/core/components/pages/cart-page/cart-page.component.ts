@@ -16,10 +16,10 @@ export class CartPageComponent {
         })
     }
     removeFromCartItem(id: CartItem) {
-        this.cartService.removeToCart(id.food.id)
+        this.cartService.removeToCart(id.food._id)
     }
     changeQuantity(cart: CartItem, quantity: string) {
         const quantities = parseInt(quantity)
-        return this.cartService.changeQuantity(cart.food.id, quantities)
+        return this.cartService.changeQuantity(cart.food._id, quantities)
     }
 }

@@ -5,6 +5,7 @@ import { IUserLogin } from '../shared/interfaces/IUserLogin'
 import { HttpClient } from '@angular/common/http'
 import { environment } from '../../environments/environment'
 import { ToastrService } from 'ngx-toastr'
+import { IUserRegister } from '../shared/interfaces/IuserRegister'
 
 const userKey = 'User'
 @Injectable({
@@ -40,6 +41,25 @@ export class UserService {
             })
         )
     }
+
+    register(user: IUserRegister): Observable<User> {
+        return this.http.post<User>(environment.api.user_register, user).pipe(
+            tap({
+                next: (user) => {
+                    this.setLocalStorage(user)
+                    this.userSubject.next(user)
+                    this.toastrService.success(
+                        `Welcome to ${user.name}`,
+                        'Register Successful'
+                    )
+                },
+                error: (error) => {
+                    this.toastrService.error(error.error, 'Register Field')
+                },
+            })
+        )
+    }
+
     logout() {
         this.userSubject.next(new User())
         localStorage.removeItem(userKey)

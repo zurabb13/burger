@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { InputContainerComponent } from '../core/components/partials/input-container/input-container.component'
 import { InputValidationComponent } from '../core/components/partials/input-validation/input-validation.component'
 import { TextInputComponent } from '../core/components/partials/text-input/text-input.component'
+import { RegisterComponent } from '../core/components/pages/register/register.component'
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import { TextInputComponent } from '../core/components/partials/text-input/text-
         InputContainerComponent,
         InputValidationComponent,
         TextInputComponent,
+        RegisterComponent,
     ],
     imports: [
         CommonModule,
@@ -40,6 +42,12 @@ import { TextInputComponent } from '../core/components/partials/text-input/text-
         ReactiveFormsModule,
         FormsModule,
     ],
-    exports: [HeaderComponent, HomeComponent, SearchComponent, TitleComponent],
+    exports: [
+        HeaderComponent,
+        HomeComponent,
+        SearchComponent,
+        TitleComponent,
+        RegisterComponent,
+    ],
 })
 export class SharedModule {}
