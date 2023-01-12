@@ -8,9 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { SharedModule } from './shared/shared.module'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { RatingModule } from 'ng-starrating'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr'
+import { LoadingInterceptor } from './shared/interceptor/loading.interceptor'
 
 @NgModule({
     declarations: [AppComponent],
@@ -30,7 +31,13 @@ import { ToastrModule } from 'ngx-toastr'
         }),
     ],
     exports: [RatingModule],
-    providers: [],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: LoadingInterceptor,
+            multi: true,
+        },
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
