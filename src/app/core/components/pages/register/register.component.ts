@@ -13,7 +13,7 @@ import { IUserRegister } from '../../../../shared/interfaces/IuserRegister'
 export class RegisterComponent implements OnInit {
     registerForm!: FormGroup
     isSubmitted = false
-    url = ''
+    returnUrl = ''
     constructor(
         private fb: FormBuilder,
         private userService: UserService,
@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
                 ),
             }
         )
-        this.url = this.activatedRoute.snapshot.queryParams.url
+        this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl
     }
 
     get fc() {
@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
                 address: fv.address,
             }
             this.userService.register(user).subscribe((_) => {
-                this.router.navigateByUrl(this.url)
+                this.router.navigateByUrl(this.returnUrl)
             })
         }
     }
