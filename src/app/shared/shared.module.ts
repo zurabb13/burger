@@ -17,6 +17,7 @@ import { InputContainerComponent } from '../core/components/partials/input-conta
 import { InputValidationComponent } from '../core/components/partials/input-validation/input-validation.component'
 import { TextInputComponent } from '../core/components/partials/text-input/text-input.component'
 import { RegisterComponent } from '../core/components/pages/register/register.component'
+import { LoadingComponent } from '../core/components/partials/loading/loading.component'
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { RegisterComponent } from '../core/components/pages/register/register.co
         InputValidationComponent,
         TextInputComponent,
         RegisterComponent,
+        LoadingComponent,
     ],
     imports: [
         CommonModule,
@@ -48,6 +50,7 @@ import { RegisterComponent } from '../core/components/pages/register/register.co
         SearchComponent,
         TitleComponent,
         RegisterComponent,
+        LoadingComponent,
     ],
 })
 export class SharedModule {}
