@@ -1,19 +1,28 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { CartService } from '../../service/cart.service'
 import { EMPTY } from 'rxjs'
 import { UserService } from '../../service/user.service'
 import { User } from '../../shared/models/user'
+import { TranslateService } from '@ngx-translate/core'
+import { LangService } from '../../service/lang.service'
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
     cartQuantity = 0
     user!: User
     f = false
-    constructor(cartService: CartService, private userService: UserService) {
+    lang = ''
+
+    constructor(
+        cartService: CartService,
+        private userService: UserService,
+        public translate: TranslateService,
+        private langS: LangService
+    ) {
         cartService.getCartObs().subscribe((res) => {
             this.cartQuantity = res.totalCount
         })
@@ -26,5 +35,25 @@ export class HeaderComponent {
     }
     get isAuth() {
         return this.user.access_token
+    }
+    ngOnInit() {
+        this.langS.currentLanguage$.subscribe((l) => {
+            this.lang = l
+        })
+        this.localStorageLang()
+        this.translate.onLangChange.subscribe((event) => {
+            localStorage.setItem('language', event.lang)
+        })
+    }
+    switchLanguage(language: string) {
+        this.translate.use(language)
+    }
+    localStorageLang() {
+        let storedLanguage = localStorage.getItem('language')
+        if (storedLanguage) {
+            this.translate.use(storedLanguage)
+        } else {
+            this.translate.use('eng')
+        }
     }
 }

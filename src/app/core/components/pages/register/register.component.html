@@ -2,17 +2,17 @@
   <div class="details">
     <app-title [title]="'Register'"></app-title>
     <form [formGroup]="registerForm" (ngSubmit)="submit()">
-      <text-input [controls]="fc.name" label="Name"  [showError]=isSubmitted type="text"></text-input>
-      <text-input [controls]="fc.email" label="Email" [showError]="isSubmitted" type="text"></text-input>
-      <text-input [controls]="fc.password" label="Password" [showError]="isSubmitted" type="password"></text-input>
-      <text-input [controls]="fc.confirmPassword" label="Confirm Password" [showError]="isSubmitted" type="password"></text-input>
-      <text-input [controls]="fc.address" label="Address" [showError]="isSubmitted" type="text"></text-input>
+      <text-input [controls]="fc.name" label="{{'sing-in.name' | translate}}"  [showError]=isSubmitted type="text"></text-input>
+      <text-input [controls]="fc.email" label="{{'login.email' | translate}}" [showError]="isSubmitted" type="text"></text-input>
+      <text-input [controls]="fc.password" label="{{'login.email' | translate}}" [showError]="isSubmitted" type="password"></text-input>
+      <text-input [controls]="fc.confirmPassword" label="{{'sing-in.conf-pass' | translate}}" [showError]="isSubmitted" type="password"></text-input>
+      <text-input [controls]="fc.address" label="{{'sing-in.address' | translate}}" [showError]="isSubmitted" type="text"></text-input>
       <div class="button">
-      <button mat-raised-button color="warn">Register</button>
+      <button mat-raised-button color="warn">{{"sing-in.register" | translate}}</button>
       </div>
         <div class="login">
-        Already a user? &nbsp;
-        <a routerLink="/auth/login" [queryParams]="{returnUrl:returnUrl}">Login here</a>
+        {{"sing-in.usr" | translate}} &nbsp;
+        <a routerLink="/auth/login" [queryParams]="{returnUrl:returnUrl}">{{"sing-in.login" | translate}}</a>
       </div>
     </form>
   </div>

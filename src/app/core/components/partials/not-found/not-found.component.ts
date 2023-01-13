@@ -7,7 +7,8 @@ import { Component, Input } from '@angular/core'
 })
 export class NotFoundComponent {
     @Input() visible = false
-    @Input() notFound = 'nothing found'
-    @Input() resetLintText = 'Reset'
+    @Input() notFound = 'error.page'
+    @Input() resetLintText = 'error.reset'
     @Input() resetLinkRoute = '/'
+    @Input() ad = 'error.page'
 }

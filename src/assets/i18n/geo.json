@@ -1,0 +1,75 @@
+{
+  "header": {
+    "login": "შესვლა",
+    "cart": "კალათა",
+    "logout": "გასვლა",
+    "cart-page": "ჩემი კალათა",
+    "profile": "profile",
+    "order": "order"
+
+
+  },
+  "search": {
+    "search": "მოძებნე საკვები",
+    "btn": "ძებნა"
+
+  },
+  "tags": {
+    "All": "ყველა",
+    "FastFood": "სწრაფი კვება",
+    "Pizza": "პიცა",
+    "Hamburger": "ბურგერი",
+    "Lunch": "ლანჩი",
+    "SlowFood": "ნელი კვება",
+    "Fry": "ფრი",
+    "Soup": "წვნიანი"
+  },
+
+    "Hamburger": "ბურგერი",
+    "Fry": "ფრი",
+    "Pizza": "ვეგეტარიანული პიცა",
+    "Meatball": "ხორცის ბურთულები",
+    "Chicken": "ქათმის წვნიანი",
+
+  "lang": {
+    "GEO": "ქართული",
+    "ENG": "ინგლისური"
+
+  },
+  "cart-page": {
+    "cart": "კალათა",
+    "empty": "კალათა ცარიელია",
+    "home": "მთავარ გვერდზე გადასვლა"
+  },
+  "login": {
+    "log": "შესვლა",
+    "pass":"პაროლი",
+    "email": "მაილი",
+    "submit": "შესვლა",
+    "newUsr": "შექმენი ახალი იუზერი",
+    "nw": "ახალიხარ?"
+  },
+  "sing-in": {
+    "name": "სახელი",
+    "conf-pass": "დაადასტურე პაროლი",
+    "address": "მისამართი",
+    "register": "რეგისტრაცია",
+    "usr": "ხარ ჩვენი მომხმარებელი?",
+    "login": "გაიარე ავტორიზაცია"
+  },
+  "error": {
+    "required": "Should not be empty",
+    "email": "Email is not valid",
+    "minlength": "Field is to short",
+    "notMatch": "Password not match",
+    "page": "გვერდი არ მოიძებნა",
+    "reset": "გადატვირთვა"
+  },
+  "remove":"გაუქმება",
+  "loading": "ჩატვირთვა ...",
+  "count": "ოდენობა",
+  "price": "თანხა",
+  "cookTime": "გამხადებას დასჭირდება",
+  "minutes": "წუთი"
+
+}

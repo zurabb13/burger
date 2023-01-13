@@ -1,25 +1,25 @@
 <div class="container">
   <div class="details">
-    <app-title title="Login"></app-title>
+    <app-title title="{{'login.log' | translate}}"></app-title>
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
       <text-input [controls]="fc.email"
                   [showError]="isSubmitted"
                   type="email"
-                  label="Email">
+                  label="{{'login.email' | translate}}">
 
       </text-input>
       <text-input [controls]="fc.password"
                   [showError]="isSubmitted"
                   type="password"
-                  label="Password">
+                  label="{{'login.pass' | translate}}">
 
       </text-input>
       <div class="button">
-        <button mat-raised-button color="warn">submit</button>
+        <button mat-raised-button color="warn">{{"login.submit"| translate}}</button>
       </div>
       <div class="register">
-        New User? &nbsp;
-        <a routerLink="/register" [queryParams]="{returnUrl:url}">Create New User</a>
+        {{"login.nw" | translate}} &nbsp;
+        <a routerLink="/register" [queryParams]="{returnUrl:url}">{{"login.newUsr" | translate}}</a>
       </div>
     </form>
   </div>

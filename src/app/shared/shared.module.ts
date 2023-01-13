@@ -18,7 +18,9 @@ import { InputValidationComponent } from '../core/components/partials/input-vali
 import { TextInputComponent } from '../core/components/partials/text-input/text-input.component'
 import { RegisterComponent } from '../core/components/pages/register/register.component'
 import { LoadingComponent } from '../core/components/partials/loading/loading.component'
-
+import { TranslateModule } from '@ngx-translate/core'
+import { HTTP_INTERCEPTORS } from '@angular/common/http'
+import { LanguageInterceptor } from './interceptor/language-interseptor.interceptor'
 @NgModule({
     declarations: [
         HeaderComponent,
@@ -43,6 +45,7 @@ import { LoadingComponent } from '../core/components/partials/loading/loading.co
         RouterModule,
         ReactiveFormsModule,
         FormsModule,
+        TranslateModule,
     ],
     exports: [
         HeaderComponent,
@@ -51,6 +54,14 @@ import { LoadingComponent } from '../core/components/partials/loading/loading.co
         TitleComponent,
         RegisterComponent,
         LoadingComponent,
+        TranslateModule,
+    ],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: LanguageInterceptor,
+            multi: true,
+        },
     ],
 })
 export class SharedModule {}

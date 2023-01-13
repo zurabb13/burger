@@ -1,8 +1,8 @@
-<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+<app-title title="{{'cart-page.cart' | translate}}" margin="1.5rem 0 0 2.5rem"></app-title>
 <app-not-found
 [visible]="!cart || !cart.items.length"
-notFound="Cart Page is Empty"
-resetLintText="Go To Home"
+notFound="{{'cart-page.empty' | translate}}"
+resetLintText="{{'cart-page.home' | translate}}"
 ></app-not-found>
 <div *ngIf="cart && cart.items.length" class="container">
   <ul>
@@ -26,14 +26,14 @@ resetLintText="Go To Home"
         {{cartItem.quantity | currency}}
       </div>
       <div>
-        <button mat-raised-button color="warn" (click)="removeFromCartItem(cartItem)">remove</button>
+        <button mat-raised-button color="warn" (click)="removeFromCartItem(cartItem)">{{"remove" | translate}}</button>
       </div>
     </li>
   </ul>
   <div class="checkout">
     <div>
-      <div class="food-count">{{cart.totalCount}}</div>
-      <div class="food-price">{{cart.totalPrice | currency}}</div>
+      <div class="food-count">{{"count" | translate }} {{cart.totalCount}}</div>
+      <div class="food-price">{{"price" | translate }} {{cart.totalPrice | currency}}</div>
     </div>
     <a mat-raised-button color="warn" routerLink="/checkout">Checkout</a>
   </div>

@@ -8,6 +8,7 @@ import {
 } from '@angular/common/http'
 import { Observable, tap } from 'rxjs'
 import { LoadingService } from '../../service/loading.service'
+import { LangService } from '../../service/lang.service'
 
 var pendingRequest = 0
 
