@@ -23,6 +23,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LanguageInterceptor } from './interceptor/language-interseptor.interceptor'
 import { CheckoutComponent } from '../core/components/pages/checkout/checkout.component'
 import { OrderItemLessComponent } from '../core/components/partials/order-item-less/order-item-less.component'
+import { MapComponent } from '../core/components/partials/map/map.component'
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import { OrderItemLessComponent } from '../core/components/partials/order-item-l
         LoadingComponent,
         CheckoutComponent,
         OrderItemLessComponent,
+        MapComponent,
     ],
     imports: [
         CommonModule,
@@ -62,6 +64,7 @@ import { OrderItemLessComponent } from '../core/components/partials/order-item-l
         TranslateModule,
         CheckoutComponent,
         OrderItemLessComponent,
+        MapComponent,
     ],
     providers: [
         {
