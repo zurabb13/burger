@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="c">
+  <div class="content">
+    <app-title title="{{'order' | translate}}" fontSize="1.6rem"></app-title>
+    <form [formGroup]="checkoutForm">
+      <text-input [controls]="fc.name" label="{{'sing-in.name' | translate}}"></text-input>
+      <text-input [controls]="fc.address" label="{{'sing-in.address' | translate}}"></text-input>
+      <app-order-item-less [order]="order"></app-order-item-less>
+    </form>
+  </div>
+  <div class="map">
+    <app-title title="{{'map' | translate}}" fontSize="1.6rem"></app-title>
+  </div>
+  </div>
+  <div class="payment">
+  <button mat-raised-button color="warn" (click)="createOrder()">{{"payment" | translate}}</button>
+  </div>
+</div>

@@ -61,4 +61,7 @@ export class CartService {
         const cartJson = localStorage.getItem('Cart')
         return cartJson ? JSON.parse(cartJson) : new Cart()
     }
+    getCart(): Cart {
+        return this.cartSubject.value
+    }
 }

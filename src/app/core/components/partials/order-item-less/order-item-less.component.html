@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <td colspan="5">
+    <h3>{{"orderItem"| translate}}: </h3>
+    </td>
+  </tr>
+  <tr *ngFor="let item of order.items">
+    <td>
+        <img [src]="item.food.imageUrl">
+
+    </td>
+    <td>{{item.food.name | translate}}</td>
+    <td>{{item.food.price | currency}}</td>
+    <td>{{item.quantity}}</td>
+    <td>{{item.price | currency}}</td>
+  </tr>
+  <tr>
+    <td colspan="3"></td>
+    <td><strong>Total </strong></td>
+    <td><strong>{{order.totalPrice | currency}}</strong></td>
+  </tr>
+</table>
