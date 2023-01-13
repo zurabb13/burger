@@ -79,18 +79,6 @@ button{
 
   .food-count {
     margin-bottom: 1.5rem;
-
-    &:before {
-      content: "Count: ";
-      color: grey;
-
-    }
-  }
-
-  .food-price:before {
-    content: "Price: ";
-    color: grey;
-
   }
   a{
     padding: 1rem;

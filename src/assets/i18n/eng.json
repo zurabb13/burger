@@ -1,0 +1,74 @@
+{
+  "header": {
+    "login": "login",
+    "cart": "cart",
+    "logout": "logout",
+    "cart-page": "cart page",
+    "profile": "profile",
+    "order": "order"
+  },
+  "search": {
+    "search": "search food",
+    "btn": "Search"
+
+  },
+  "tags": {
+    "All": "all",
+    "FastFood": "FastFood",
+    "Pizza": "Pizza",
+    "Hamburger": "Hamburger",
+    "Lunch": "Lunch",
+    "SlowFood": "SlowFood",
+    "Fry": "Fry",
+    "Soup": "Soup"
+  },
+
+    "Hamburger":"Hamburger",
+    "Fry": "Fried Potatoes",
+    "Pizza": "Vegetables Pizza",
+    "Meatball": "Meatball",
+    "Chicken": "Chicken Soup",
+
+  "lang": {
+    "GEO": "GEORGIA",
+    "ENG": "ENGLISH"
+  },
+  "cart-page": {
+    "cart": "Cart Page",
+    "empty": "Cart Page Is Empty",
+    "home": "Go To Home"
+
+  },
+  "login": {
+    "log": "Login",
+    "pass":"Password",
+    "email": "Email",
+    "submit": "Submit",
+    "newUsr": "Create New User",
+    "nw": "New User?"
+  },
+  "sing-in": {
+    "name": "Name",
+    "conf-pass": "Confirm Password",
+    "address": "Address",
+    "register": "Register",
+    "usr": "Already are user?",
+    "login": "Login here"
+  },
+  "error": {
+    "required": "Should not be empty",
+    "email": "Email is not valid",
+    "minlength": "Field is to short",
+    "notMatch": "Password not match",
+    "page": "Page not Found",
+    "reset": "Reset"
+  },
+  "remove": "remove",
+  "loading": "Loading ...",
+  "count": "Count",
+  "price": "Price",
+  "cookTime": "Time to cook about",
+  "minutes": "minutes"
+
+
+}

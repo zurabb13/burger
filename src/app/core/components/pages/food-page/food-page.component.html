@@ -9,7 +9,8 @@ resetLintText="Back To HomePage"
   <div class="details">
     <div class="header">
       <span class="name">
-        {{foods.name}}
+        {{foods.name | translate }}
+<!--        {{'' | translate: { food: foods.name } }}-->
       </span>
       <span class="favorite {{foods.favorite? '': 'not'}}">❤</span>
     </div>
@@ -38,7 +39,7 @@ resetLintText="Back To HomePage"
 
     <div class="cook-time">
       <span>
-        Time to cook about <strong>{{foods.cookTime}}</strong> minutes
+       {{"cookTime" | translate}}<strong>{{foods.cookTime}}</strong> {{"minutes" | translate}}
       </span>
     </div>
 

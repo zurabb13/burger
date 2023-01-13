@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core'
     styleUrls: ['./title.component.scss'],
 })
 export class TitleComponent {
-    @Input() title!: string
+    @Input() title: any
     @Input() margin? = '1rem 0 1rem 0.2rem'
     @Input() fontSize? = '1.7rem'
 }

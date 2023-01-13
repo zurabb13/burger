@@ -4,18 +4,25 @@
   <div class="home">
     <ul>
       <li *ngIf="!isAuth">
-        <a routerLink="/auth/login">Login</a>
+        <a routerLink="/auth/login">{{"header.login" | translate}}</a>
       </li>
       <li *ngIf="isAuth" class="manu-container">
         <a>{{user.name}}</a>
         <div class="manu">
-          <a routerLink="/profile">Profile</a>
-          <a routerLink="/order">Orders</a>
-          <a (click)="logout()">Logout</a>
+          <a routerLink="/profile">{{"header.profile" | translate}}</a>
+          <a routerLink="/order">{{"header.order" | translate}}</a>
+          <a (click)="logout()">{{"header.logout" | translate}}</a>
         </div>
       </li>
       <li>
-        <a class="cart" routerLink="/cart-page">Cart <span *ngIf="cartQuantity"  [matBadge]="cartQuantity" matBadgeColor="warn" ></span></a>
+        <a class="cart" routerLink="/cart-page">{{"header.cart" | translate}} <span *ngIf="cartQuantity"  [matBadge]="cartQuantity" matBadgeColor="warn" ></span></a>
+      </li>
+      <li>
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>language</mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item value="GEO" (click)="switchLanguage('geo')">{{"lang.GEO"  | translate }}</button>
+          <button mat-menu-item value="ENG" (click)="switchLanguage('eng')">{{"lang.ENG" | translate }}</button>
+        </mat-menu>
       </li>
     </ul>
   </div>
