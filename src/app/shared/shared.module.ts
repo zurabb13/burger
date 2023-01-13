@@ -21,6 +21,9 @@ import { LoadingComponent } from '../core/components/partials/loading/loading.co
 import { TranslateModule } from '@ngx-translate/core'
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LanguageInterceptor } from './interceptor/language-interseptor.interceptor'
+import { CheckoutComponent } from '../core/components/pages/checkout/checkout.component'
+import { OrderItemLessComponent } from '../core/components/partials/order-item-less/order-item-less.component'
+
 @NgModule({
     declarations: [
         HeaderComponent,
@@ -37,6 +40,8 @@ import { LanguageInterceptor } from './interceptor/language-interseptor.intercep
         TextInputComponent,
         RegisterComponent,
         LoadingComponent,
+        CheckoutComponent,
+        OrderItemLessComponent,
     ],
     imports: [
         CommonModule,
@@ -55,6 +60,8 @@ import { LanguageInterceptor } from './interceptor/language-interseptor.intercep
         RegisterComponent,
         LoadingComponent,
         TranslateModule,
+        CheckoutComponent,
+        OrderItemLessComponent,
     ],
     providers: [
         {

@@ -68,7 +68,10 @@
   "count": "Count",
   "price": "Price",
   "cookTime": "Time to cook about",
-  "minutes": "minutes"
+  "minutes": "minutes",
 
-
+"payment": "Go To Payment",
+  "order":"Order Form",
+  "orderItem":"Order Items",
+  "map": "Choose your address map"
 }

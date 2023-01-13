@@ -1,0 +1,20 @@
+.container{
+  .c{
+    display: flex;
+    justify-content: center;
+  }
+  .content{
+    width: 35rem;
+
+  }
+}
+.payment{
+  margin-top: 10px;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  button{
+    width: 300px;
+  }
+
+}
