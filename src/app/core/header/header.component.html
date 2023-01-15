@@ -7,18 +7,23 @@
         <a routerLink="/login">{{"header.login" | translate}}</a>
       </li>
       <li *ngIf="isAuth" class="manu-container">
-        <a>{{user.name}}</a>
-        <div class="manu">
-          <a routerLink="/profile">{{"header.profile" | translate}}</a>
-          <a routerLink="/order">{{"header.order" | translate}}</a>
-          <a (click)="logout()">{{"header.logout" | translate}}</a>
-        </div>
+        <a [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger"  mouseHover>{{user.name | uppercase}}</a>
+          <mat-menu #menu="matMenu" xPosition="after">
+          <button mat-menu-item routerLink="/profile">{{"header.profile" | translate | uppercase}}</button>
+          <button mat-menu-item routerLink="/order">{{"header.order" | translate | uppercase}}</button>
+          <button mat-menu-item (click)="logout()">{{"header.logout" | translate | uppercase}}</button>
+        </mat-menu>
+<!--        <div class="manu">-->
+<!--          <a routerLink="/profile">{{"header.profile" | translate}}</a>-->
+<!--          <a routerLink="/order">{{"header.order" | translate}}</a>-->
+<!--          <a (click)="logout()">{{"header.logout" | translate}}</a>-->
+<!--        </div>-->
       </li>
       <li>
         <a class="cart" routerLink="/cart-page">{{"header.cart" | translate}} <span *ngIf="cartQuantity"  [matBadge]="cartQuantity" matBadgeColor="warn" ></span></a>
       </li>
       <li>
-        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>language</mat-icon></button>
+        <button mat-button [matMenuTriggerFor]="menu" mouseHover mouseleave><mat-icon>language</mat-icon></button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item value="GEO" (click)="switchLanguage('geo')">{{"lang.GEO"  | translate }}</button>
           <button mat-menu-item value="ENG" (click)="switchLanguage('eng')">{{"lang.ENG" | translate }}</button>

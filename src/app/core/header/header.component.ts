@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 import { CartService } from '../../service/cart.service'
 import { EMPTY } from 'rxjs'
 import { UserService } from '../../service/user.service'
@@ -12,6 +12,10 @@ import { LangService } from '../../service/lang.service'
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+    @Output() notify: EventEmitter<boolean> = new EventEmitter<boolean>()
+    mouseLeave() {
+        this.notify.emit(false)
+    }
     cartQuantity = 0
     user!: User
     f = false
