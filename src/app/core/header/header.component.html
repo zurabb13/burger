@@ -4,7 +4,7 @@
   <div class="home">
     <ul>
       <li *ngIf="!isAuth">
-        <a routerLink="/auth/login">{{"header.login" | translate}}</a>
+        <a routerLink="/login">{{"header.login" | translate}}</a>
       </li>
       <li *ngIf="isAuth" class="manu-container">
         <a>{{user.name}}</a>

@@ -4,7 +4,7 @@
     <form [formGroup]="registerForm" (ngSubmit)="submit()">
       <text-input [controls]="fc.name" label="{{'sing-in.name' | translate}}"  [showError]=isSubmitted type="text"></text-input>
       <text-input [controls]="fc.email" label="{{'login.email' | translate}}" [showError]="isSubmitted" type="text"></text-input>
-      <text-input [controls]="fc.password" label="{{'login.email' | translate}}" [showError]="isSubmitted" type="password"></text-input>
+      <text-input [controls]="fc.password" label="{{'login.pass' | translate}}" [showError]="isSubmitted" type="password"></text-input>
       <text-input [controls]="fc.confirmPassword" label="{{'sing-in.conf-pass' | translate}}" [showError]="isSubmitted" type="password"></text-input>
       <text-input [controls]="fc.address" label="{{'sing-in.address' | translate}}" [showError]="isSubmitted" type="text"></text-input>
       <div class="button">

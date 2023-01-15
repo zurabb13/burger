@@ -8,7 +8,7 @@ export const environment = {
         food_search: `${endpoint}search/`,
         food_id: `${endpoint}food/`,
         tag_name: `${endpoint}tag/`,
-        user_login: `${endpoint}auth/login`,
+        user_login: `${endpoint}login`,
         user_register: `${endpoint}register`,
     },
 }

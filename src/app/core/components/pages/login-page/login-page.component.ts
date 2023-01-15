@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router'
 export class LoginPageComponent implements OnInit {
     loginForm!: FormGroup
     isSubmitted = false
-    url = ''
+    returnUrl = ''
     constructor(
         private fb: FormBuilder,
         private userService: UserService,
@@ -20,12 +20,12 @@ export class LoginPageComponent implements OnInit {
     ) {}
     ngOnInit(): void {
         this.formBuilder()
-        this.url = this.activatedRoute.snapshot.queryParams.url
+        this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl
     }
 
     formBuilder() {
         this.loginForm = this.fb.group({
-            email: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
             password: ['', Validators.required],
         })
     }
@@ -34,7 +34,7 @@ export class LoginPageComponent implements OnInit {
     }
     submit() {
         this.isSubmitted = true
-        if (this.loginForm.invalid) return
+        // if (this.loginForm.invalid) return
 
         this.userService
             .login({
@@ -42,7 +42,7 @@ export class LoginPageComponent implements OnInit {
                 password: this.fc.password.value,
             })
             .subscribe(() => {
-                this.router.navigateByUrl(this.url)
+                this.router.navigateByUrl(this.returnUrl)
             })
     }
 }

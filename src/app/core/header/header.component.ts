@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
         this.userService.logout()
     }
     get isAuth() {
-        return this.user.access_token
+        return this.user.token
     }
     ngOnInit() {
         this.langS.currentLanguage$.subscribe((l) => {
@@ -44,6 +44,7 @@ export class HeaderComponent implements OnInit {
         this.translate.onLangChange.subscribe((event) => {
             localStorage.setItem('language', event.lang)
         })
+        this.isAuth
     }
     switchLanguage(language: string) {
         this.translate.use(language)

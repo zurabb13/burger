@@ -30,7 +30,7 @@ const routes: Routes = [
         component: CartPageComponent,
     },
     {
-        path: 'auth/login',
+        path: 'login',
         component: LoginPageComponent,
     },
     {

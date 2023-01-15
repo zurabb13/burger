@@ -1,8 +1,8 @@
 export class User {
     id!: string
-    email!: string
     name!: string
+    email!: string
     address!: string
-    access_token!: string
+    token!: string
     isAdmin!: boolean
 }
