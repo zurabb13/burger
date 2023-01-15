@@ -5,7 +5,7 @@
       <text-input [controls]="fc.email"
                   [showError]="isSubmitted"
                   type="email"
-                  label="{{'login.email' | translate}}">
+                  label="{{'login.email' | translate | uppercase}}">
 
       </text-input>
       <text-input [controls]="fc.password"
@@ -19,7 +19,7 @@
       </div>
       <div class="register">
         {{"login.nw" | translate}} &nbsp;
-        <a routerLink="/register" [queryParams]="{returnUrl:url}">{{"login.newUsr" | translate}}</a>
+        <a routerLink="/register" [queryParams]="{ returnUrl : returnUrl }">{{"login.newUsr" | translate}}</a>
       </div>
     </form>
   </div>

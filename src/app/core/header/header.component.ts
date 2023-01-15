@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 import { CartService } from '../../service/cart.service'
 import { EMPTY } from 'rxjs'
 import { UserService } from '../../service/user.service'
@@ -12,6 +12,10 @@ import { LangService } from '../../service/lang.service'
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+    @Output() notify: EventEmitter<boolean> = new EventEmitter<boolean>()
+    mouseLeave() {
+        this.notify.emit(false)
+    }
     cartQuantity = 0
     user!: User
     f = false
@@ -34,7 +38,7 @@ export class HeaderComponent implements OnInit {
         this.userService.logout()
     }
     get isAuth() {
-        return this.user.access_token
+        return this.user.token
     }
     ngOnInit() {
         this.langS.currentLanguage$.subscribe((l) => {
@@ -44,6 +48,7 @@ export class HeaderComponent implements OnInit {
         this.translate.onLangChange.subscribe((event) => {
             localStorage.setItem('language', event.lang)
         })
+        this.isAuth
     }
     switchLanguage(language: string) {
         this.translate.use(language)

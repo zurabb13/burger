@@ -59,3 +59,15 @@
   };
 
 }
+:host mat-menu{
+  background: red !important;
+}
+::ng-deep .mat-mdc-menu-panel.mat-mdc-menu-panel {
+    min-width: 119px;
+    max-width: 280px;
+    overflow: auto;
+    background: red;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+
+}

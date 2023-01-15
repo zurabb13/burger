@@ -12,7 +12,7 @@ const userKey = 'User'
     providedIn: 'root',
 })
 export class UserService {
-    private userSubject = new BehaviorSubject(this.getUserLocalStorage())
+    private userSubject = new BehaviorSubject<User>(this.getUserLocalStorage())
     public userObservable: Observable<User>
     constructor(
         private http: HttpClient,
@@ -23,7 +23,7 @@ export class UserService {
     public get currentUser(): User {
         return this.userSubject.value
     }
-    login(user: IUserLogin): Observable<User> {
+    login(user: any): Observable<User> {
         return this.http.post<User>(environment.api.user_login, user).pipe(
             tap({
                 next: (user) => {
@@ -31,8 +31,8 @@ export class UserService {
                     this.userSubject.next(user)
                     this.toastrService.success(
                         `
-                    welcome foodmine ${user.name}`,
-                        'login Successfull'
+                    welcome to ${user.name}`,
+                        'login Successful'
                     )
                 },
                 error: (errorResponse) => {
@@ -52,7 +52,7 @@ export class UserService {
                     this.setLocalStorage(user)
                     this.userSubject.next(user)
                     this.toastrService.success(
-                        `Welcome to ${user.name}`,
+                        `Welcome to ${user.email}`,
                         'Register Successful'
                     )
                 },
