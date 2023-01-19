@@ -1,4 +1,4 @@
 <div>
-  <input #s type="text" placeholder="{{'search.search' | translate}}" (keyup.enter)="search(s.value)"/>
+  <input #s type="text" placeholder="{{'search.search' | translate}}" (keyup.enter)="search(s.value)"  [(ngModel)]="searchTerm" (keyup)="setSearchTerm(searchTerm)"/>
   <button  mat-raised-button color="warn" (click)="search(s.value)">{{"search.btn" | translate}}</button>
 </div>

@@ -21,7 +21,7 @@
       display: inline-block;
       color: white;
       &:hover{
-        color: red;
+        color: #9977da;
       }
 
     }
@@ -44,7 +44,7 @@
         width: 100%;
         min-width:8rem;
         &:hover{
-          color:red
+          color:#7e4ae6;
         }
       }
     }
@@ -60,15 +60,16 @@
   };
 
 }
-:host mat-menu{
-  background: red !important;
-}
 ::ng-deep .mat-mdc-menu-panel.mat-mdc-menu-panel {
     min-width: 119px;
     max-width: 280px;
     overflow: auto;
-    background: red;
+    background: #7e4ae6;
+  color: white !important;
     -webkit-overflow-scrolling: touch;
     position: relative;
 
+}
+::ng-deep .mdc-list-item__primary-text{
+  color: white !important;
 }

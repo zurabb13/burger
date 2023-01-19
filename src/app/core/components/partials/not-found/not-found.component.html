@@ -1,4 +1,4 @@
 <div *ngIf="visible">
   {{notFound | translate}}
-  <a [routerLink]="resetLinkRoute">{{resetLintText | translate}} </a>
+  <a [routerLink]="resetLinkRoute" (click)="reload()">{{resetLintText | translate}} </a>
 </div>

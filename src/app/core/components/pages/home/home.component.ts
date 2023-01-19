@@ -3,6 +3,7 @@ import { Food } from '../../../../shared/models/food'
 import { FoodService } from '../../../../service/food.service'
 import { ActivatedRoute } from '@angular/router'
 import { Observable } from 'rxjs'
+import { SearchService } from '../../../../service/search.service'
 
 @Component({
     selector: 'app-home',
@@ -11,10 +12,12 @@ import { Observable } from 'rxjs'
     styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+    searchTerm = ''
     foods: Food[] = []
     constructor(
         private fService: FoodService,
-        private activateRoute: ActivatedRoute
+        private activateRoute: ActivatedRoute,
+        private searchService: SearchService
     ) {
         activateRoute.params.subscribe((param) => {
             let foodsObservalbe: Observable<Food[]>
@@ -36,5 +39,9 @@ export class HomeComponent implements OnInit {
         })
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.searchService.getSearch().subscribe((term) => {
+            this.searchTerm = term
+        })
+    }
 }

@@ -11,4 +11,8 @@ export class NotFoundComponent {
     @Input() resetLintText = 'error.reset'
     @Input() resetLinkRoute = '/'
     @Input() ad = 'error.page'
+
+    reload() {
+        window.location.reload()
+    }
 }

@@ -52,6 +52,7 @@ export class HeaderComponent implements OnInit {
     }
     switchLanguage(language: string) {
         this.translate.use(language)
+        window.location.reload()
     }
     localStorageLang() {
         let storedLanguage = localStorage.getItem('language')

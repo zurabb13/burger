@@ -5,7 +5,7 @@
 resetLintText="{{'error.reset' | translate}}"
 ></app-not-found>
 <ul>
-  <li *ngFor="let food of foods">
+  <li *ngFor="let food of foods | search: searchTerm">
     <a routerLink="/food/{{food._id}}">
       <img [src]="food.imageUrl" [alt]="food.name" />
       <div class="content">
@@ -40,5 +40,4 @@ resetLintText="{{'error.reset' | translate}}"
     </a>
   </li>
 </ul>
-
 

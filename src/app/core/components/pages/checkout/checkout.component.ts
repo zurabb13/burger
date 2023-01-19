@@ -56,13 +56,16 @@ export class CheckoutComponent implements OnInit {
         this.order.name = this.fc.name.value
         this.order.address = this.fc.address.value
 
-        this.orderService.createOrder(this.order).subscribe({
-            next: () => {
-                this.router.navigateByUrl('/payment')
-            },
-            error: (error) => {
-                this.toastrService.error(error.error, 'Cart')
-            },
-        })
+        this.toastrService.success('Order is added')
+        this.router.navigateByUrl('/')
+
+        // this.orderService.createOrder(this.order).subscribe({
+        //     next: () => {
+        //         this.router.navigateByUrl('/payment')
+        //     },
+        //     error: (error) => {
+        //         this.toastrService.error(error.error, 'Cart')
+        //     },
+        // })
     }
 }
