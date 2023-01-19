@@ -1,4 +1,11 @@
-<app-input-container [label]="label">
-  <input [type]="type" [placeholder]="label" [formControl]="formControl">
-  <app-input-validation [control]="formControl" [showErors]="showError"></app-input-validation>
-</app-input-container>
+<!--<app-input-container [label]="label">-->
+<form class="example-form">
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>{{label}}</mat-label>
+    <input matInput [type]="type" [formControl]="formControl">
+  </mat-form-field>
+</form>
+
+<!--<app-input-validation [control]="formControl" [showErors]="showError"></app-input-validation>-->
+<!--  <input matInput [type]="type" [placeholder]="label" [formControl]="formControl">-->
+<!--</app-input-container>-->

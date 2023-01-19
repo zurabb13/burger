@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { SharedModule } from './shared/shared.module'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { RatingModule } from 'ng-starrating'
 import {
     HttpClientModule,
     HTTP_INTERCEPTORS,
@@ -37,7 +36,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         }),
         BrowserModule,
         AppRoutingModule,
-        RatingModule,
         BrowserAnimationsModule,
         SharedModule,
         NgbModule,
@@ -50,7 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
             newestOnTop: false,
         }),
     ],
-    exports: [RatingModule, TranslateModule],
+    exports: [TranslateModule],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,

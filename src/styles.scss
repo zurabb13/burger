@@ -1,10 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~leaflet/dist/leaflet.css";
+@import "assets/scss/link";
+//@import '~bootstrap/scss/bootstrap';
+//@import '~css-star-rating/scss/star-rating.scss';
+//@import '~css-star-rating/scss/star-rating';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 a{
-  text-decoration: none;
+  text-decoration: none !important;
   //color: white;
 
 }
+.d-inline-flex {
+  display: inline-block !important;
+}
+ngb-rating{
+  color: #fddd0a;
+  font-size: 24px;
+  display: inline-block !important;
+}
+
+

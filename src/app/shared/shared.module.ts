@@ -3,7 +3,6 @@ import { HeaderComponent } from '../core/header/header.component'
 import { MaterialModule } from './material.module'
 import { HomeComponent } from '../core/components/pages/home/home.component'
 import { CommonModule } from '@angular/common'
-import { RatingModule } from 'ng-starrating'
 import { SearchComponent } from '../core/components/partials/search/search.component'
 import { TagsComponent } from '../core/components/partials/tags/tags.component'
 import { RouterModule } from '@angular/router'
@@ -26,7 +25,10 @@ import { OrderItemLessComponent } from '../core/components/partials/order-item-l
 import { MapComponent } from '../core/components/partials/map/map.component'
 import { MouseHoverDirective } from './directive/mousehover.directive'
 import { MouseLeaveDirective } from './directive/mouse-leave.directive'
-
+import { AuthInterceptor } from './interceptor/auth.interceptor'
+import { StarRatingModule } from 'angular-star-rating'
+import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap'
 @NgModule({
     declarations: [
         HeaderComponent,
@@ -52,11 +54,14 @@ import { MouseLeaveDirective } from './directive/mouse-leave.directive'
     imports: [
         CommonModule,
         MaterialModule,
-        RatingModule,
         RouterModule,
         ReactiveFormsModule,
         FormsModule,
         TranslateModule,
+        StarRatingModule.forRoot(),
+        NgbPaginationModule,
+        NgbAlertModule,
+        NgbRatingModule,
     ],
     exports: [
         HeaderComponent,
@@ -74,6 +79,11 @@ import { MouseLeaveDirective } from './directive/mouse-leave.directive'
         {
             provide: HTTP_INTERCEPTORS,
             useClass: LanguageInterceptor,
+            multi: true,
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
             multi: true,
         },
     ],

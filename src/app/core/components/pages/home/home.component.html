@@ -16,14 +16,7 @@ resetLintText="{{'error.reset' | translate}}"
           ❤
         </span>
         <div class="stars">
-          <star-rating
-            [value]="food.stars"
-            [totalstars]="5"
-            checkedcolor="red"
-            uncheckedcolor="black"
-            size="22px"
-            [readonly]="true">
-          </star-rating>
+          <ngb-rating [(rate)]="food.stars" [readonly]="true" [max]="5"></ngb-rating>
         </div>
         <div class="product-item-footer">
           <div class="origins">

@@ -9,7 +9,7 @@ import { AbstractControl, FormControl } from '@angular/forms'
 export class TextInputComponent {
     @Input() controls!: AbstractControl
     @Input() showError: boolean = true
-    @Input() label: any
+    @Input() label!: string
     @Input() type: 'text' | 'password' | 'email' = 'text'
 
     get formControl() {

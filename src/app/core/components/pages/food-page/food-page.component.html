@@ -15,14 +15,16 @@ resetLintText="Back To HomePage"
       <span class="favorite {{foods.favorite? '': 'not'}}">❤</span>
     </div>
     <div class="rating">
-      <star-rating
-        [value]="foods.stars"
-        [totalstars]="5"
-        checkedcolor="red"
-        uncheckedcolor="black"
-        size="25px"
-        [readonly]="true">
-      </star-rating>
+      <ngb-rating [(rate)]="foods.stars" [readonly]="true" [max]="5"></ngb-rating>
+<!--      <star-rating-->
+<!--        [value]="foods.stars"-->
+<!--        [totalstars]="5"-->
+<!--        checkedcolor="red"-->
+<!--        uncheckedcolor="black"-->
+<!--        size="25px"-->
+<!--        [readonly]="true">-->
+<!--      </star-rating>-->
+<!--      <star-rating></star-rating>-->
     </div>
 
     <div class="origins">

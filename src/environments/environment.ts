@@ -10,5 +10,6 @@ export const environment = {
         tag_name: `${endpoint}tag/`,
         user_login: `${endpoint}login`,
         user_register: `${endpoint}register`,
+        user_order: `${endpoint}order/create`,
     },
 }

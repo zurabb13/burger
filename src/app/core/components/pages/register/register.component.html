@@ -1,6 +1,6 @@
 <div class="container">
   <div class="details">
-    <app-title [title]="'Register'"></app-title>
+    <app-title title="{{'sing-in.register'| translate}}"></app-title>
     <form [formGroup]="registerForm" (ngSubmit)="submit()">
       <text-input [controls]="fc.name" label="{{'sing-in.name' | translate}}"  [showError]=isSubmitted type="text"></text-input>
       <text-input [controls]="fc.email" label="{{'login.email' | translate}}" [showError]="isSubmitted" type="text"></text-input>
@@ -12,7 +12,7 @@
       </div>
         <div class="login">
         {{"sing-in.usr" | translate}} &nbsp;
-        <a routerLink="/auth/login" [queryParams]="{returnUrl:returnUrl}">{{"sing-in.login" | translate}}</a>
+        <a routerLink="/login" [queryParams]="{returnUrl:returnUrl}">{{"sing-in.login" | translate}}</a>
       </div>
     </form>
   </div>
