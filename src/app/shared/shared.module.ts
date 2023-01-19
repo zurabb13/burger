@@ -29,6 +29,8 @@ import { AuthInterceptor } from './interceptor/auth.interceptor'
 import { StarRatingModule } from 'angular-star-rating'
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap'
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap'
+import { SearchPipe } from './pipe/search.pipe'
+
 @NgModule({
     declarations: [
         HeaderComponent,
@@ -50,6 +52,7 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap'
         MapComponent,
         MouseHoverDirective,
         MouseLeaveDirective,
+        SearchPipe,
     ],
     imports: [
         CommonModule,
@@ -74,6 +77,7 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap'
         CheckoutComponent,
         OrderItemLessComponent,
         MapComponent,
+        SearchPipe,
     ],
     providers: [
         {
